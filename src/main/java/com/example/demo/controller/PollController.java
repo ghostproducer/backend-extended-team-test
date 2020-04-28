@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.Poll;
 import com.example.demo.repository.PollRepository;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class PollController {
