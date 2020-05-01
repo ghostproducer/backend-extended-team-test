@@ -58,7 +58,7 @@ There are 3 components: `poll-list`, `poll-details`, `add-poll`.
 ![Back End Strutcture](images/back-end-structure.png)
 
 The back end was built using Java 8 + Spring Boot + Maven. The `pom.xml` file was generated using the [Spring Initializr service](https://start.spring.io/).
-The Angular source code is located inside the `/src/ui` folder.
+The Angular source code is located inside the `/src/web` folder.
 
 – `Poll` data model class corresponds to entity and table tutorials.
 
@@ -104,7 +104,15 @@ mvn spring-boot:run
 
 To start the front end, open a new terminal instance: 
 ```
-cd src/ui/test/
+cd src/web/test/
 npm install
-ng serve --port 8081
+ng serve
 ```
+
+The application can then be accessed in the browser, trough the url http://localhost:4200/
+
+### Heroku Deployment
+
+Even tough it was not requested to deploy the app in a production environment, Heroku provides a simple alternative to test the app in a real world approach.
+
+To publish on the internet, you need to build the front end files, using the `ng build prod` in the Angular root folder. Then, copy the generated files from the `/target/` folder to the `/src/main/resources/static` folder, which will be served from the Java backend.
