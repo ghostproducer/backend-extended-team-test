@@ -8,9 +8,9 @@ Desired features, in order of priority:
 
 - A user can come to the webpage and create a new poll. [x]
 
-- The user should be able to specify a title for the poll, a brief description, and a list of options.
+- The user should be able to specify a title for the poll, a brief description, and a list of options. [x]
 
-- After the poll is created, the user should be able to edit the poll, and modify anything they specified originally.
+- After the poll is created, the user should be able to edit the poll, and modify anything they specified originally. [x]
 
 - After the poll is created, the user should be able to share their poll with their friends. This can be as simple as generating a link that they can have other people go to to respond to the poll.
 
