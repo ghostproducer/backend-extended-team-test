@@ -90,3 +90,21 @@ The REST API to handle all the requests from the front end is defined at the `Po
 The current database is being currently hosted in a AWS RDS db.t2.micro personal instance, running MySQl Community.
 All info is being saved in a single table, called simply `polls`.
 
+### Local Setup
+
+To run it in your localhost, you need to start the back end and the front end as different services.
+
+To start the back end:  
+
+```
+git clone https://github.com/ghostproducer/extended-team-test
+cd extended-team-test-master/
+mvn spring-boot:run
+```
+
+To start the front end, open a new terminal instance: 
+```
+cd src/ui/test/
+npm install
+ng serve --port 8081
+```
