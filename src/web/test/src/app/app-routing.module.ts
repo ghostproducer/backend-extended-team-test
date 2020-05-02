@@ -5,7 +5,7 @@ import { PollListComponent} from './components/poll-list/poll-list.component';
 import { AddPollComponent} from './components/add-poll/add-poll.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'tutorials', pathMatch: 'full' },
+  { path: '', redirectTo: 'poll', pathMatch: 'full' },
   { path: 'poll', component: PollListComponent },
   { path: 'poll/:id', component: PollDetailsComponent },
   { path: 'add', component: AddPollComponent }

@@ -60,11 +60,11 @@ There are 3 components: `poll-list`, `poll-details`, `add-poll`.
 The back end was built using Java 8 + Spring Boot + Maven. The `pom.xml` file was generated using the [Spring Initializr service](https://start.spring.io/).
 The Angular source code is located inside the `/src/web` folder.
 
-– `Poll` data model class corresponds to entity and table tutorials.
+– `Poll` data model class corresponds to entity and table poll.
 
 – `PollRepository` is an interface that extends JpaRepository for CRUD methods and custom finder methods.
 
-– `PollController` is a RestController which has request mapping methods for RESTful requests such as: getAllTutorials, createTutorial, updateTutorial, deleteTutorial, findByPublished…
+– `PollController` is a RestController which has request mapping methods for RESTful requests such as: getAllPolls, createPoll, updatePoll, deletePoll, etc.
 
 – Configuration for Spring Datasource and the MySQL database is in `application.properties`.
 
