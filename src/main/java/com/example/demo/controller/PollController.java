@@ -128,12 +128,13 @@ public class PollController {
 
         try {
             Poll _poll = pollData.get();
-            if (poll.equals(1)){
+            if (poll.getOptionOne() != null){
                 _poll.setTotalVotesOne();
-            } else {
+            }
+            if (poll.getOptionTwo() != null){
                 _poll.setTotalVotesTwo();
             }
-            return new ResponseEntity<>(_poll, HttpStatus.CREATED);
+            return new ResponseEntity<>(pollRepository.save(_poll), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
         }

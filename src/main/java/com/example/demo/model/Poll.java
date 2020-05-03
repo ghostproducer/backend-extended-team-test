@@ -20,13 +20,13 @@ public class Poll {
     private boolean published;
 
     @Column(name = "optionOne")
-    private String optionOne;
+    public String optionOne;
 
     @Column(name = "totalVotesOne")
     private int totalVotesOne;
 
     @Column(name = "optionTwo")
-    private String optionTwo;
+    public String optionTwo;
 
     @Column(name = "totalVotesTwo")
     private int totalVotesTwo;
