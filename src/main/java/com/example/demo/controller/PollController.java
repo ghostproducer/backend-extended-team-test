@@ -64,7 +64,7 @@ public class PollController {
     public ResponseEntity<Poll> createPoll(@RequestBody Poll poll) {
         try {
             Poll _poll = pollRepository
-                    .save(new Poll(poll.getTitle(), poll.getDescription(), false));
+                    .save(new Poll(poll.getTitle(), poll.getDescription(), false, poll.getOptionOne(), poll.getOptionTwo()));
             return new ResponseEntity<>(_poll, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
@@ -104,7 +104,6 @@ public class PollController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
-
     }
 
     @GetMapping("/poll/published")

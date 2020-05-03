@@ -19,14 +19,22 @@ public class Poll {
     @Column(name = "published")
     private boolean published;
 
+    @Column(name = "optionOne")
+    private String optionOne;
+
+    @Column(name = "optionTwo")
+    private String optionTwo;
+
     public Poll() {
 
     }
 
-    public Poll(String title, String description, boolean published) {
+    public Poll(String title, String description, boolean published, String optionOne, String OptionTwo) {
         this.title = title;
         this.description = description;
         this.published = published;
+        this.optionOne = optionOne;
+        this.optionTwo = optionTwo;
     }
 
     public long getId() {
@@ -57,8 +65,16 @@ public class Poll {
         this.published = isPublished;
     }
 
+    public String getOptionOne() { return  optionOne; }
+
+    public void setOptionOne(String optionOne) {this.optionOne = optionOne; }
+
+    public String getOptionTwo() { return  optionTwo; }
+
+    public void setOptionTwo(String optionTwo) {this.optionTwo = optionTwo; }
+
     @Override
     public String toString() {
-        return "Poll [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+        return "Poll [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + ", optionOne=" + optionOne + ", optionTwo=" + optionTwo + "]";
     }
 }
