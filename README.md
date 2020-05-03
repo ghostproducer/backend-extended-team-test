@@ -1,6 +1,7 @@
 # Extended Team Test
 
 This is my purposed solution for the Extended Team technical test. 
+This is the source code for the back end only. To check the Angular front end code, [click this link](https://github.com/ghostproducer/frontend-extended-team-test).
 
 ### The Task
 
