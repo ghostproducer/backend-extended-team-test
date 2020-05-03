@@ -80,6 +80,8 @@ public class PollController {
             _poll.setTitle(poll.getTitle());
             _poll.setDescription(poll.getDescription());
             _poll.setPublished(poll.isPublished());
+            _poll.setOptionOne(poll.getOptionOne());
+            _poll.setOptionTwo(poll.getOptionTwo());
             return new ResponseEntity<>(pollRepository.save(_poll), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

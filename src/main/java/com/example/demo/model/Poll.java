@@ -29,7 +29,7 @@ public class Poll {
 
     }
 
-    public Poll(String title, String description, boolean published, String optionOne, String OptionTwo) {
+    public Poll(String title, String description, boolean published, String optionOne, String optionTwo) {
         this.title = title;
         this.description = description;
         this.published = published;
