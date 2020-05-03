@@ -64,7 +64,7 @@ public class PollController {
     public ResponseEntity<Poll> createPoll(@RequestBody Poll poll) {
         try {
             Poll _poll = pollRepository
-                    .save(new Poll(poll.getTitle(), poll.getDescription(), false, poll.getOptionOne(), poll.getOptionTwo()));
+                    .save(new Poll(poll.getTitle(), poll.getDescription(), false, poll.getOptionOne(), poll.getTotalVotesOne(), poll.getOptionTwo(), poll.getTotalVotesTwo()));
             return new ResponseEntity<>(_poll, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
@@ -119,6 +119,23 @@ public class PollController {
             return new ResponseEntity<>(poll, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+    }
+
+    @PostMapping("/poll/{id}/{option}")
+    public ResponseEntity<Poll> vote(@PathVariable("id") long id, @RequestBody Poll poll) {
+        Optional<Poll> pollData = pollRepository.findById(id);
+
+        try {
+            Poll _poll = pollData.get();
+            if (poll.equals(1)){
+                _poll.setTotalVotesOne();
+            } else {
+                _poll.setTotalVotesTwo();
+            }
+            return new ResponseEntity<>(_poll, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
         }
     }
 }

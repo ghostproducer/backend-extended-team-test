@@ -22,19 +22,27 @@ public class Poll {
     @Column(name = "optionOne")
     private String optionOne;
 
+    @Column(name = "totalVotesOne")
+    private int totalVotesOne;
+
     @Column(name = "optionTwo")
     private String optionTwo;
+
+    @Column(name = "totalVotesTwo")
+    private int totalVotesTwo;
 
     public Poll() {
 
     }
 
-    public Poll(String title, String description, boolean published, String optionOne, String optionTwo) {
+    public Poll(String title, String description, boolean published, String optionOne, int totalVotesOne, String optionTwo, int totalVotesTwo) {
         this.title = title;
         this.description = description;
         this.published = published;
         this.optionOne = optionOne;
+        this.totalVotesOne = totalVotesOne;
         this.optionTwo = optionTwo;
+        this.totalVotesTwo = totalVotesTwo;
     }
 
     public long getId() {
@@ -69,9 +77,17 @@ public class Poll {
 
     public void setOptionOne(String optionOne) {this.optionOne = optionOne; }
 
+    public int getTotalVotesOne() { return totalVotesOne; }
+
+    public void setTotalVotesOne() { this.totalVotesOne++; }
+
     public String getOptionTwo() { return  optionTwo; }
 
     public void setOptionTwo(String optionTwo) {this.optionTwo = optionTwo; }
+
+    public int getTotalVotesTwo() { return totalVotesTwo; }
+
+    public void setTotalVotesTwo() { this.totalVotesTwo++; }
 
     @Override
     public String toString() {
