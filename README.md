@@ -36,7 +36,7 @@ Desired features, in order of priority:
 
 For solving this test, the front end is treated as a separated part from backend. The front end was built using Angular 9, the back end was built using Java 8 + SpringBoot, and the database is being hosted in my private AWS RDS, in a MySQL database.
 
-For quick testing the app in a ambient similar to a production environment, it was deployed in a CI/CD pipeline service known as heroku. The deployed version can be accessed in [this link](https://extended-team-test.herokuapp.com/). Everytime a new code was pushed to the master branch, the heroku pipeline automatically detects the changes, and built it in a certain url.
+For quick testing the app in a ambient similar to a production environment, it was deployed in a CI/CD pipeline service known as heroku. The deployed version can be accessed in [this link](https://frontend-extended-team-test.herokuapp.com/). Everytime a new code was pushed to the master branch, the heroku pipeline automatically detects the changes, and built it in a certain url.
 
 ### Front End Structure
 
@@ -53,12 +53,13 @@ There are 3 components: `poll-list`, `poll-details`, `add-poll`.
 
 – `app.module.ts` declares Angular components and import necessary modules.
 
+The `server.js` file is a NodeJs file that is being used to deploy the angular app to heroku.
+
 ### Back End Structure
 
 ![Back End Strutcture](images/back-end-structure.png)
 
 The back end was built using Java 8 + Spring Boot + Maven. The `pom.xml` file was generated using the [Spring Initializr service](https://start.spring.io/).
-The Angular source code is located inside the `/src/web` folder.
 
 – `Poll` data model class corresponds to entity and table poll.
 
@@ -97,14 +98,16 @@ To run it in your localhost, you need to start the back end and the front end as
 To start the back end:  
 
 ```
-git clone https://github.com/ghostproducer/extended-team-test
-cd extended-team-test-master/
+git clone https://github.com/ghostproducer/backend-extended-team-test
+cd backend-extended-team-test-master/
+mvn clean install
 mvn spring-boot:run
 ```
 
 To start the front end, open a new terminal instance: 
 ```
-cd src/web/test/
+git clone https://github.com/ghostproducer/frontend-backend-extended-team-test
+cd frontend-extended-team-test-master/
 npm install
 ng serve
 ```
@@ -115,4 +118,6 @@ The application can then be accessed in the browser, trough the url http://local
 
 Even tough it was not requested to deploy the app in a production environment, Heroku provides a simple alternative to test the app in a real world approach.
 
-To publish on the internet, you need to build the front end files, using the `ng build prod` in the Angular root folder. Then, copy the generated files from the `/target/` folder to the `/src/main/resources/static` folder, which will be served from the Java backend.
+To publish this app in the internet, two heroku instances were created, one for the front end, and other for the back end.
+
+The back end exposes the API endpoint in the heroku app url, which is accessed by the front end REST requests.
