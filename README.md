@@ -1,7 +1,8 @@
 # Extended Team Test
 
 This is my purposed solution for the Extended Team technical test. 
-This is the source code for the back end only. To check the Angular front end code, [click this link](https://github.com/ghostproducer/frontend-extended-team-test).
+
+This is the source code for the front end only. To check the Java back end code, [click this link](https://github.com/ghostproducer/backend-extended-team-test).
 
 ### The Task
 
@@ -13,9 +14,9 @@ Desired features, in order of priority:
 
 - After the poll is created, the user should be able to edit the poll, and modify anything they specified originally. [x]
 
-- After the poll is created, the user should be able to share their poll with their friends. This can be as simple as generating a link that they can have other people go to to respond to the poll.
+- After the poll is created, the user should be able to share their poll with their friends. This can be as simple as generating a link that they can have other people go to to respond to the poll. [x]
 
-- The user should be able to view a graph of the responses to their poll.
+- The user should be able to view a graph of the responses to their poll. [x]
 
 - A user responding to a poll should be able to edit their response. (You do not need to authenticate users attempting to edit responses)
 
@@ -86,6 +87,7 @@ The REST API to handle all the requests from the front end is defined at the `Po
 | DELETE       | /api/poll                      | delete all polls                              |
 | GET          | /api/poll/published            | retrieve all polls that has a published URL   |
 | GET          | /api/poll?title=[keyword]      | find all polls which title contais `[keyword]`|                    |
+| POST         | /api/poll/:id/:option          | vote in a option in a specified poll
 
 ### Database Structure
 
