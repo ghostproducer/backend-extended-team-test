@@ -2,7 +2,7 @@
 
 This is my purposed solution for the Extended Team technical test. 
 
-This is the source code for the front end only. To check the Java back end code, [click this link](https://github.com/ghostproducer/backend-extended-team-test).
+This is the source code for the back end only. To check the Angular front end code, [click this link](https://github.com/ghostproducer/backend-extended-team-test).
 
 ### The Task
 
